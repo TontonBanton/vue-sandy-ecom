@@ -14,19 +14,19 @@ import Card from './Card.vue';
           </p>
           <a
             href="jobs.html"
-            class="inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700"
+            class="inline-block bg-green-800 text-white rounded-lg px-4 py-2 hover:bg-gray-700"
           >
             Browse Jobs
           </a>
         </Card>
-        <Card bg="bg-gray-200">
+        <Card bg="bg-gray-300">
           <h2 class="text-2xl font-bold">For Employers</h2>
           <p class="mt-2 mb-4">
             List your job to find the perfect developer for the role
           </p>
           <a
             href="add-job.html"
-            class="inline-block bg-green-500 text-white rounded-lg px-4 py-2 hover:bg-green-600"
+            class="inline-block bg-green-800 text-white rounded-lg px-4 py-2 hover:bg-green-600"
           >
             Add Job
           </a>
