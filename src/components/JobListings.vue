@@ -1,12 +1,28 @@
 <script setup>
 import JobListing from './JobListing.vue';
-import { ref } from 'vue';
 import jobData from '../jobs.json';
+import { ref, defineProps } from 'vue';
+
+// Define props
+const props = defineProps({
+  limit: Number,
+  showButton: {
+    type: Boolean,
+    default: false
+  }
+});
+
+// Reactive variables
 const jobs = ref(jobData);
+const jobLimit = ref(props.limit || jobs.value.length);
 
-console.log(jobs.value); // This should log the job data to the console
+// Function to show all jobs
+const showAllJobs = (event) => {
+  event.preventDefault();               // Prevent default link behavior
+  jobLimit.value = jobs.value.length;   // Show all jobs
+};
+
 </script>
-
 
 <template>
   <section class="bg-blue-100 px-4 py-10">
@@ -15,11 +31,23 @@ console.log(jobs.value); // This should log the job data to the console
         Browse Jobs
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <JobListing v-for="job in jobs" :key="job.id" :job="job" />
+        <JobListing
+          v-for="job in jobs.slice(0, jobLimit)"
+          :key="job.id"
+          :job="job"
+        />
       </div>
     </div>
   </section>
-
+  <section v-if="showButton" class="m-auto max-w-lg my-10 px-6">
+    <a
+      href="/jobs"
+      class="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700"
+      @click="showAllJobs"
+    >
+      View All Jobs
+    </a>
+  </section>
 </template>
 
 

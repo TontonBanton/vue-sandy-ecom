@@ -14,7 +14,7 @@ import Card from './Card.vue';
           </p>
           <a
             href="jobs.html"
-            class="inline-block bg-green-800 text-white rounded-lg px-4 py-2 hover:bg-gray-700"
+            class="inline-block bg-green-500 text-white rounded-lg px-4 py-2 hover:bg-gray-700"
           >
             Browse Jobs
           </a>
@@ -26,7 +26,7 @@ import Card from './Card.vue';
           </p>
           <a
             href="add-job.html"
-            class="inline-block bg-green-800 text-white rounded-lg px-4 py-2 hover:bg-green-600"
+            class="inline-block bg-green-500 text-white rounded-lg px-4 py-2 hover:bg-green-600"
           >
             Add Job
           </a>

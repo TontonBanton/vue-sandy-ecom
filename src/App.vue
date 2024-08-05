@@ -1,9 +1,8 @@
 <template>
   <Navbar/>
-  <Hero title="Title from Parent App" subtitle="SubTitle from Parent App"/>
-  <!-- <Hero /> -->
+  <Hero />
   <HomeCards/>
-  <JobListings/>
+  <JobListings :limit="3" :showButton="true" />   <!--Props pass to listings component-->
 </template>
 
 <script setup>

@@ -2,7 +2,7 @@
 //import { defineProps } from 'vue';
 const props = defineProps({
   title: { type: String, default: 'Become a Developer' },
-  subtitle: { type: String, default: 'Added Information' },
+  subtitle: { type: String, default: 'Becoming a developer opens doors to endless innovation and transformation.' },
 })
 </script>
 
