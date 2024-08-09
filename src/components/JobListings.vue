@@ -23,10 +23,9 @@ const showAllJobs = (event) => {
 </script>
 
 <template>
-
-  <section class="bg-blue-100 px-4 py-10">
+  <section class="bg-gray-400 px-4 py-10">
     <div class="container-xl lg:container m-auto">
-      <h2 class="text-3xl font-bold text-gray-700 mb-6 text-center">Browse Jobs</h2>
+      <h2 class="text-3xl font-bold text-white mb-6 text-center">Browse Jobs</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <JobListing
           v-for="job in jobs.slice(0, jobLimit)"
@@ -35,15 +34,13 @@ const showAllJobs = (event) => {
         />
       </div>
     </div>
-  </section>
-
-  <section v-if="showButton" class="m-auto max-w-lg my-10 px-6">
-    <RouterLink to="/jobs" @click="showAllJobs"
-      class="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700">
+    <div v-if="showButton" class="m-auto max-w-lg my-10 px-6">
+      <RouterLink to="/jobs" @click="showAllJobs"
+        class="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700">
       View All Jobs
-    </RouterLink>
+      </RouterLink>
+    </div>
   </section>
-
 </template>
 
 
