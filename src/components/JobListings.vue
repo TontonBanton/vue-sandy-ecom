@@ -1,9 +1,11 @@
 <script setup>
+import { ref, defineProps, onMounted } from 'vue';
 import { RouterLink } from 'vue-router';
 import JobListing from './JobListing.vue';
-import jobData from '../jobs2.json';       //Array Data
+import axios from 'axios';
+//import jobData from '../jobs.json';       //Array Data Testing
+//import jobData from '../jobs2.json';       //Array Data Testing
 
-import { ref, defineProps } from 'vue';
 const props = defineProps({
   limit: Number,
   showButton: {
@@ -12,20 +14,32 @@ const props = defineProps({
   }
 });
 
-const jobs = ref(jobData);
-const jobLimit = ref(props.limit || jobs.value.length);
+//const jobs = ref(jobData)
+const jobs = ref([]);
 
+const jobLimit = ref(props.limit || jobs.value.length);
 const showAllJobs = (event) => {
   event.preventDefault();               // Prevent default link behavior
   jobLimit.value = jobs.value.length;   // Show all jobs
 };
+
+
+onMounted( async ()=> {
+  try {
+    const response = await axios.get('http://localhost:5000/jobs')
+    jobs.value = response.data
+    console.log(jobs.value)
+  } catch (error) {
+    console.error('Error fetching data', error)
+  }
+})
 
 </script>
 
 <template>
   <section class="bg-gray-400 px-4 py-10">
     <div class="container-xl lg:container m-auto">
-      <h2 class="text-3xl font-bold text-white mb-6 text-center">Browse Jobs</h2>
+      <h2 class="text-3xl font-bold mb-6 text-center">Browse Jobs</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <JobListing
           v-for="job in jobs.slice(0, jobLimit)"

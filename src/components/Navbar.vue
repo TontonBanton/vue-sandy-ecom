@@ -10,7 +10,7 @@ const isActiveLink = (routePath)=> {
 </script>
 
 <template>
-  <nav class="bg-gray-500 border-b border-green-600">
+  <nav class="bg-gray-700">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="flex h-20 items-center justify-between">
         <div class="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
@@ -23,17 +23,17 @@ const isActiveLink = (routePath)=> {
           <div class="md:ml-auto">
             <div class="flex space-x-2">
               <RouterLink to="/"
-                :class="[ isActiveLink('/') ? 'bg-green-700' : 'bg-gray-700',
+                :class="[ isActiveLink('/') ? 'bg-orange-700' : 'bg-gray-800',
                   'text-white', 'rounded-md','px-3', 'py-2']">
               Home
               </RouterLink>
               <RouterLink to="/jobs"
-                :class="[ isActiveLink('/jobs') ? 'bg-green-700' : 'bg-gray-700',
+                :class="[ isActiveLink('/jobs') ? 'bg-orange-700' : 'bg-gray-800',
                   'text-white', 'rounded-md','px-3', 'py-2']">
               Jobs
               </RouterLink>
               <RouterLink to="/jobs/add"
-                :class="[ isActiveLink('/jobs/add') ? 'bg-green-700' : 'bg-gray-700',
+                :class="[ isActiveLink('/jobs/add') ? 'bg-orange-700' : 'bg-gray-800',
                   'text-white', 'rounded-md','px-3', 'py-2']">
               Add Job
               </RouterLink>
