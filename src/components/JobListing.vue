@@ -33,7 +33,7 @@ const truncatedDescription = computed(()=> {
           @click="toggleFullDescription">{{ showFullDescription ? 'Less' : 'More'}}
         </button>
       </div>
-      <h3 class="text-green-500 mb-2">{{ job.salary }}</h3>
+      <h3 class="text-orange-700 mb-2">{{ job.salary }}</h3>
 
       <div class="border border-gray-100 mb-5"></div>
 

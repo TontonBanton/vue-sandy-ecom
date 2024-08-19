@@ -1,4 +1,6 @@
 <script setup>
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
+import axios from 'axios';
 </script>
 
 <template>
