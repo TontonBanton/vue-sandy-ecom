@@ -1,5 +1,6 @@
 <script setup>
 import ClipLoader from 'vue-spinner/src/ClipLoader.vue'
+import BackButton from '@/components/BackButton.vue'
 import { reactive, onMounted } from 'vue'
 import { useRoute, RouterLink } from 'vue-router';
 import axios from 'axios';
@@ -25,6 +26,7 @@ onMounted( async ()=> {
 </script>
 
 <template>
+    <BackButton/>
     <section v-if="!state.isLoading" class="bg-gray-400">
       <div class="container m-auto py-10 px-6">
         <div class="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6">
