@@ -12,7 +12,7 @@ const props = defineProps({                         //Props Initial data is from
 
 // import jobData from '../jobs2.json';             //Array Manual Data Testing
 // const jobs = ref(jobData)
-// const jobs = ref([]);                            //Using ref
+// const jobs = ref([]);
 
 //Using reactive
  const state = reactive({
@@ -23,7 +23,7 @@ const props = defineProps({                         //Props Initial data is from
 //const jobLimit = ref(props.limit || jobs.value.length);   //Using ref
 const jobLimit = ref(props.limit || state.jobs.length);     //Using reactive
 
-const showAllJobs = (event) => {                //View all jobs button
+const showAllJobs = (event) => {
   event.preventDefault();
   //jobLimit.value = jobs.value.length;         //Using ref
   jobLimit.value = state.job.length;            //Using reactive
@@ -31,7 +31,7 @@ const showAllJobs = (event) => {                //View all jobs button
 
 onMounted( async ()=> {
   try {
-    const response = await axios.get('http://localhost:5000/jobs')
+    const response = await axios.get('http://localhost:8000/jobs')
     //jobs.value = response.data    //using ref
     state.jobs = response.data      //using reactive
   } catch (error) {
@@ -50,7 +50,7 @@ onMounted( async ()=> {
       <h2 class="text-3xl font-bold mb-6 text-center">Browse Jobs</h2>
 
       <!--Show Spinner if isLoading true-->
-      <div v-if="state.isLoading" class="text-center text-gray-500 py-6"><ClLoader :loading="true" color="#c2410c" /></div>
+      <div v-if="state.isLoading" class="text-center text-gray-500 py-6"><ClipLoader :loading="true" color="#c2410c" /></div>
 
       <!--Show Job Listing after axios get isLoading is false-->
       <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-6">
