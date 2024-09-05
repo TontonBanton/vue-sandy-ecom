@@ -6,7 +6,7 @@ import Card from '@/components/Card.vue';
 <template>
   <section class="bg-gray-400 py-4">
     <div class="container-xl lg:container m-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg ">
 
         <Card>
           <h2 class="text-2xl font-bold">For Developers</h2>

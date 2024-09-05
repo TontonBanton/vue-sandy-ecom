@@ -31,7 +31,7 @@ const showAllJobs = (event) => {
 
 onMounted( async ()=> {
   try {
-    const response = await axios.get('http://localhost:8000/jobs')
+    const response = await axios.get('/api/jobs')      //using vite proxy for '/api'
     //jobs.value = response.data    //using ref
     state.jobs = response.data      //using reactive
   } catch (error) {

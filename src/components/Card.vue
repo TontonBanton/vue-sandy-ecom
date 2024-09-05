@@ -1,7 +1,7 @@
 <script setup>
 //import { defineProps } from 'vue';
 const props = defineProps({
-  bg: { type: String, default: 'bg-gray-200' },
+  bg: { type: String, default: 'bg-gray-300' },
 })
 </script>
 
