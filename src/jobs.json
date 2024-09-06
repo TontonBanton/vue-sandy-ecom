@@ -97,6 +97,20 @@
         "contactEmail": "trial@email.com",
         "contactPhone": "09098243699"
       }
+    },
+    {
+      "id": "13d8",
+      "type": "Remote",
+      "title": "Solution Contractor",
+      "description": "Contracting Solutions",
+      "salary": "$100K - $125K",
+      "location": "Km. 8 Crossing Ulas, Davao City",
+      "company": {
+        "name": "Ton_IO",
+        "description": "Solutions to Problems",
+        "contactEmail": "trial@email.com",
+        "contactPhone": "09098243699"
+      }
     }
   ]
 }
