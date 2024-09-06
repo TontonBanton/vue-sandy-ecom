@@ -2,15 +2,34 @@
 import ClipLoader from 'vue-spinner/src/ClipLoader.vue'
 import BackButton from '@/components/BackButton.vue'
 import { reactive, onMounted } from 'vue'
-import { useRoute, RouterLink } from 'vue-router';
 import axios from 'axios';
+import { RouterLink, useRoute, useRouter } from 'vue-router';
+import { useToast } from 'vue-toastification';
 
 const route = useRoute()
+const router = useRouter()
+const toast = useToast()
+
 const jobId = route.params.id
 const state = reactive({
   job: {},
   isLoading: true
 })
+
+const deleteJob = async ()=> {
+  try {
+    //Confirm first
+    const confirm = window.confirm('Are you sure you want to delete entry?')
+    if (confirm) {
+      axios.delete(`/api/jobs/${jobId}`)
+      toast.success('Deleted Successfully')
+      router.push('/jobs')
+    }
+  } catch (error) {
+    console.log('Error deleting', error)
+    toast.error('Job not deleted')
+  }
+}
 
 onMounted( async ()=> {
   try {
@@ -41,9 +60,9 @@ onMounted( async ()=> {
             </div>
 
             <div class="bg-white p-6 rounded-lg shadow-md mt-6">
-              <h3 class="text-green-800 text-lg font-bold mb-6">Job Description</h3>
+              <h3 class="text-orange-800 text-lg font-bold mb-6">Job Description</h3>
               <p class="mb-4">{{ state.job.description }}</p>
-              <h3 class="text-green-800 text-lg font-bold mb-2">Salary</h3>
+              <h3 class="text-orange-800 text-lg font-bold mb-2">Salary</h3>
               <p class="mb-4">{{ state.job.salary}}</p>
             </div>
           </main>
@@ -71,7 +90,7 @@ onMounted( async ()=> {
                 class="bg-black hover:bg-orange-700 text-white text-center py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
               Edit Job
               </RouterLink>
-              <button class="bg-black hover:bg-orange-700 text-white py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
+              <button @click="deleteJob" class="bg-black hover:bg-orange-700 text-white py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
                 Delete Job
               </button>
             </div>
