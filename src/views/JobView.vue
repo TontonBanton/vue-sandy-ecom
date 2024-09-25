@@ -1,14 +1,12 @@
 <script setup>
-import ClipLoader from 'vue-spinner/src/ClipLoader.vue'
 import BackButton from '@/components/BackButton.vue'
+import ClipLoader from 'vue-spinner/src/ClipLoader.vue'
 import { reactive, onMounted } from 'vue'
+import { RouterLink, useRoute } from 'vue-router';
+import { useJobActions } from '@/composables/useJobActions';
 import axios from 'axios';
-import { RouterLink, useRoute, useRouter } from 'vue-router';
-import { useToast } from 'vue-toastification';
 
 const route = useRoute()
-const router = useRouter()
-const toast = useToast()
 
 const jobId = route.params.id
 const state = reactive({
@@ -16,20 +14,7 @@ const state = reactive({
   isLoading: true
 })
 
-const deleteJob = async ()=> {
-  try {
-    //Confirm first
-    const confirm = window.confirm('Are you sure you want to delete entry?')
-    if (confirm) {
-      axios.delete(`/api/jobs/${jobId}`)
-      toast.success('Deleted Successfully')
-      router.push('/jobs')
-    }
-  } catch (error) {
-    console.log('Error deleting', error)
-    toast.error('Job not deleted')
-  }
-}
+const { deleteJob } = useJobActions();
 
 onMounted( async ()=> {
   try {
@@ -90,7 +75,7 @@ onMounted( async ()=> {
                 class="bg-black hover:bg-orange-700 text-white text-center py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
               Edit Job
               </RouterLink>
-              <button @click="deleteJob" class="bg-black hover:bg-orange-700 text-white py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
+              <button  @click="deleteJob(state.job.id)" class="bg-black hover:bg-orange-700 text-white py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
                 Delete Job
               </button>
             </div>
