@@ -1,11 +1,8 @@
 <script setup>
 import { reactive } from 'vue'
-import axios from 'axios'
-import { useRouter } from 'vue-router';
-import { useToast } from 'vue-toastification';
+import { useJobActions } from '@/composables/useJobActions'; // Import the composable
+const { addJob } = useJobActions(); // Destructure the addJob function
 
-const router = useRouter()
-const toast = useToast()
 
 const form = reactive({
   type: '',
@@ -20,40 +17,13 @@ const form = reactive({
     contactPhone: ''
   }
 })
-
-const handleSubmit = async ()=> {
-
-  const newJob = {
-    type: form.type,
-    title: form.title,
-    description: form.description,
-    salary: form.salary,
-    location: form.location,
-    company: {
-      name: form.company.name,
-      description: form.company.description,
-      contactEmail: form.company.contactEmail,
-      contactPhone: form.company.contactPhone
-    }
-  }
-  console.log(newJob)
-  try {
-    const response = await axios.post('/api/jobs', newJob)
-    toast.success('Added Successfully')
-    router.push(`/jobs/${response.data.id}`)
-  } catch (error) {
-    console.error('Error fetching: ', error)
-    toast.success('There is an error adding')
-  }
-}
-
 </script>
 
 <template>
   <section class="bg-gray-400">
       <div class="container m-auto max-w-2xl py-24">
         <div class="bg-gray-300 px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
-          <form @submit.prevent="handleSubmit">
+          <form @submit.prevent="addJob(form)">
             <h2 class="text-3xl text-center font-semibold mb-6">Add Job</h2>
 
             <div class="mb-4"><label for="type" class="block text-gray-700 font-bold mb-2">Job Type</label>
