@@ -99,7 +99,6 @@
       }
     },
     {
-      "id": "22fb",
       "type": "Remote",
       "title": "Solution Contractor",
       "description": "Describe the description",
@@ -107,9 +106,24 @@
       "location": "Km. 8 Crossing Ulas, Davao City",
       "company": {
         "name": "Ton_IO",
-        "description": "Company Description",
+        "description": "Company Description Trial",
         "contactEmail": "trial@email.com",
         "contactPhone": "09098243699"
+      },
+      "id": "22fb"
+    },
+    {
+      "id": "e16a",
+      "type": "Remote",
+      "title": "Problem Solutions",
+      "description": "Solving basic common sense",
+      "salary": "Over $200K",
+      "location": "Km. 8 Crossing Ulas, Davao City",
+      "company": {
+        "name": "Ton_IO",
+        "description": "Get things done",
+        "contactEmail": "trial@email.com",
+        "contactPhone": "555-555-5555"
       }
     }
   ]
