@@ -5,35 +5,32 @@ import JobListing from './JobListing.vue';
 import axios from 'axios';
 import ClipLoader from 'vue-spinner/src/ClipLoader.vue'
 
-const props = defineProps({                         //Props Initial data is from HomeView.vue
+const props = defineProps({                                 //Initial from HomeView.vue
   limit: Number,
   showButton: { type: Boolean, default: false }
 });
 
-// import jobData from '../jobs2.json';             //Array Manual Data Testing
-// const jobs = ref(jobData)
 // const jobs = ref([]);
 
-//Using reactive
  const state = reactive({
    jobs: [],
    isLoading: true
  })
 
-//const jobLimit = ref(props.limit || jobs.value.length);   //Using ref
-const jobLimit = ref(props.limit || state.jobs.length);     //Using reactive
+//const jobLimit = ref(props.limit || jobs.value.length);   //ref
+const jobLimit = ref(props.limit || state.jobs.length);     //reactive
 
 const showAllJobs = (event) => {
   event.preventDefault();
-  //jobLimit.value = jobs.value.length;         //Using ref
-  jobLimit.value = state.job.length;            //Using reactive
+  //jobLimit.value = jobs.value.length;          //ref
+  jobLimit.value = state.jobs.length;            //reactive
 }
 
 onMounted( async ()=> {
   try {
-    const response = await axios.get('/api/jobs')      //using vite proxy for '/api'
-    //jobs.value = response.data    //using ref
-    state.jobs = response.data      //using reactive
+    const response = await axios.get('/api/jobs')           //vite proxy for '/api'
+    //jobs.value = response.data                  //ref
+    state.jobs = response.data                    //reactive
   } catch (error) {
     console.error('Error fetching data', error)
   } finally {
@@ -61,9 +58,8 @@ onMounted( async ()=> {
     </div>
 
     <div v-if="showButton" class="m-auto max-w-lg my-10 px-6">
-      <RouterLink to="/jobs" @click="showAllJobs"
-        class="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-orange-700">
-      View All Jobs
+      <RouterLink to="/jobs" @click="showAllJobs" class="btn">
+        View All Jobs
       </RouterLink>
     </div>
 
