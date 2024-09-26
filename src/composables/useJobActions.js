@@ -31,6 +31,31 @@ export function useJobActions() {
     }
   };
 
+  const updateJob = async (jobId, form) => {
+    const updatedJob = {
+      type: form.type,
+      title: form.title,
+      description: form.description,
+      salary: form.salary,
+      location: form.location,
+      company: {
+        name: form.company.name,
+        description: form.company.description,
+        contactEmail: form.company.contactEmail,
+        contactPhone: form.company.contactPhone
+      }
+    };
+
+    try {
+      const response = await axios.put(`/api/jobs/${jobId}`, updatedJob);
+      toast.success('Updated Successfully');
+      router.push(`/jobs/${response.data.id}`);
+    } catch (error) {
+      console.error('Error updating job:', error);
+      toast.error('There was an error updating the job');
+    }
+  };
+
   const deleteJob = async (jobId) => {
     try {
       const confirm = window.confirm('Are you sure you want to delete entry?');
@@ -47,6 +72,7 @@ export function useJobActions() {
 
   return {
     addJob,
+    updateJob,
     deleteJob
   };
 }

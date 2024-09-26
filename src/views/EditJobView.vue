@@ -1,57 +1,24 @@
 <script setup>
 import { reactive, onMounted } from 'vue'
 import axios from 'axios'
-import { useRoute, useRouter } from 'vue-router';
-import { useToast } from 'vue-toastification';
+import { useRoute } from 'vue-router';
+import { useJobForm } from '@/composables/useJobForm';
+import { useJobActions } from '@/composables/useJobActions';
+
+const { form } = useJobForm();
+const { updateJob } = useJobActions();
 
 const route = useRoute()
-const router = useRouter()
-const toast = useToast()
 const jobId = route.params.id
-
-const form = reactive({
-  type: '',
-  title: '',
-  description: '',
-  salary: '',
-  location: '',
-  company: {
-    name: '',
-    description: '',
-    contactEmail: '',
-    contactPhone: ''
-  }
-})
 
 const state = reactive({
   job: {},
   isLooading: true
 })
 
-const handleSubmit = async ()=> {
-  const updateJob = {
-    type: form.type,
-    title: form.title,
-    description: form.description,
-    salary: form.salary,
-    location: form.location,
-    company: {
-      name: form.company.name,
-      description: form.company.description,
-      contactEmail: form.company.contactEmail,
-      contactPhone: form.company.contactPhone
-    }
-  }
-  console.log(updateJob)
-  try {
-    const response = await axios.put(`/api/jobs/${jobId}`, updateJob)
-    toast.success('Updated Successfully')
-    router.push(`/jobs/${response.data.id}`)
-  } catch (error) {
-    console.error('Error fetching: ', error)
-    toast.success('There is an error updating')
-  }
-}
+const handleSubmit = async () => {
+  await updateJob(jobId, form);
+};
 
 onMounted(async ()=> {
   try {

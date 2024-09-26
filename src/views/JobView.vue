@@ -7,14 +7,13 @@ import { useJobActions } from '@/composables/useJobActions';
 import axios from 'axios';
 
 const route = useRoute()
+const { deleteJob } = useJobActions();
 
 const jobId = route.params.id
 const state = reactive({
   job: {},
   isLoading: true
 })
-
-const { deleteJob } = useJobActions();
 
 onMounted( async ()=> {
   try {
@@ -71,7 +70,7 @@ onMounted( async ()=> {
             <div class="bg-white p-6 rounded-lg shadow-md mt-6">
               <h3 class="text-xl font-bold mb-6">Manage Job</h3>
               <RouterLink :to="`/jobs/edit/${state.job.id}`" class="btn"> Edit Job </RouterLink>
-              <button  @click="deleteJob(state.job.id)" class="btn"> Delete Job </button>
+              <button @click="deleteJob(state.job.id)" class="btn"> Delete Job </button>
             </div>
           </aside>
         </div>
