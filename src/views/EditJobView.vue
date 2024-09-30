@@ -4,73 +4,49 @@ import axios from 'axios'
 import { useRoute } from 'vue-router';
 import { useJobForm } from '@/composables/useJobForm';
 import { useJobActions } from '@/composables/useJobActions';
-
-const { form } = useJobForm();
-const { updateJob } = useJobActions();
+import { useJobOptions } from '@/composables/useJobOptions'
 
 const route = useRoute()
 const jobId = route.params.id
+const { form, populateForm } = useJobForm();
+const { updateJob } = useJobActions();
+const { jobTypes, salaryRanges } = useJobOptions();
 
 const jobData = reactive({
   job: {},
   isLooading: true
 })
 
-const handleSubmit = async () => {
-  await updateJob(jobId, form);
-};
-
 onMounted(async ()=> {
   try {
     const response = await axios.get(`/api/jobs/${jobId}`)
     jobData.job = response.data
-    // Populate inputs
-    form.type = jobData.job.type;
-    form.title = jobData.job.title;
-    form.description = jobData.job.description;
-    form.salary = jobData.job.salary;
-    form.location = jobData.job.location;
-    form.company.name = jobData.job.company.name;
-    form.company.description = jobData.job.company.description;
-    form.company.contactEmail = jobData.job.company.contactEmail;
-    form.company.contactPhone = jobData.job.company.contactPhone;
+    populateForm(jobData.job)
   } catch (error) {
     console.error('Error fetching: ', error)
   } finally {
     jobData.isLooading = false
   }
 })
-
 </script>
 
 <template>
   <section class="bg-gray-400">
       <div class="container m-auto max-w-2xl py-24">
         <div class="bg-gray-300 px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
-          <form @submit.prevent="handleSubmit">
+          <form @submit.prevent="updateJob(jobId, form)">
             <h2 class="text-3xl text-center font-semibold mb-6">Edit Job</h2>
             <select v-model="form.type" id="type" name="type" class="mb-4" required >
-              <option value="" disabled selected>Job Type</option>
-              <option value="Full-Time">Full-Time</option>
-              <option value="Part-Time">Part-Time</option>
-              <option value="Remote">Remote</option>
-              <option value="Internship">Internship</option>
+              <option v-for="option in jobTypes" :key="option.value" :value="option.value" :disabled="option.disabled">
+              {{ option.text }}
+            </option>
             </select>
             <input v-model="form.title" type="text" id="name" name="name" placeholder="Job Name" class="mb-4" required />
             <textarea v-model="form.description" id="description" name="description"  rows="4" placeholder="Tasks" class="mb-4"></textarea>
             <select v-model="form.salary" id="salary" name="salary" class="mb-4" required>
-              <option value="" disabled selected>Salary</option>
-              <option value="Under $50K">under $50K</option>
-              <option value="$50K - $60K">$50 - $60K</option>
-              <option value="$60K - $70K">$60 - $70K</option>
-              <option value="$70K - $80K">$70 - $80K</option>
-              <option value="$80K - $90K">$80 - $90K</option>
-              <option value="$90K - $100K">$90 - $100K</option>
-              <option value="$100K - $125K">$100 - $125K</option>
-              <option value="$125K - $150K">$125 - $150K</option>
-              <option value="$150K - $175K">$150 - $175K</option>
-              <option value="$175K - $200K">$175 - $200K</option>
-              <option value="Over $200K">Over $200K</option>
+              <option v-for="option in salaryRanges" :key="option.value" :value="option.value" :disabled="option.disabled">
+              {{ option.text }}
+            </option>>
             </select>
             <input v-model="form.location" type="text" id="location" name="location" placeholder="Location" class="mb-4" required />
             <input v-model="form.company.name" type="text" id="company" name="company" placeholder="Company" class="mb-4"/>

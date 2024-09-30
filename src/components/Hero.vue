@@ -1,5 +1,5 @@
 <script setup>
-//import { defineProps } from 'vue';
+//import { defineProps } from 'vue';  no need to import on compostion setup
 const props = defineProps({
   title: { type: String, default: 'Become a Developer' },
   subtitle: { type: String, default: 'Becoming a developer opens doors to innovation and transformation.' },

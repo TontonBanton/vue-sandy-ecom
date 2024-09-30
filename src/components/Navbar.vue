@@ -11,8 +11,8 @@ const isActiveLink = (routerLinkPath) => {
 </script>
 
 <template>
-  <nav class="bg-gray-700">
-    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 flex h-20 items-center justify-between">
+  <nav class="bg-gray-600">
+    <div class="mx-auto w-full px-2 sm:px-6 lg:px-8 flex h-20 items-center justify-between">
       <!-- Logo -->
       <RouterLink class="flex flex-shrink-0 items-center mr-4" to="/">
         <img class="h-10 w-auto" :src="logo" alt="Vue Jobs" />

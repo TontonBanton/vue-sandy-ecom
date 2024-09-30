@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 @layer components {
+  .loader {
+    @apply text-center text-gray-500 py-6;
+  }
   .btn {
-    @apply focus:outline-none focus:ring bg-orange-700 bg-orange-700 hover:bg-orange-600 text-white text-center py-2 px-4 rounded-full w-full mt-4 block;
+    @apply focus:outline-none focus:ring bg-orange-700 bg-orange-700 hover:bg-orange-600 text-white text-center py-2 px-4 rounded-lg w-full mt-4 block;
   }
   .navbtn {
     @apply text-white rounded-md px-3 py-2;

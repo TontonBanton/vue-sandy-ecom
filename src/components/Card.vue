@@ -1,8 +1,7 @@
 <script setup>
-//import { defineProps } from 'vue';
-const props = defineProps({
-  bg: { type: String, default: 'bg-gray-300' },
-})
+  const props = defineProps({
+    bg: { type: String, default: 'bg-gray-300' },
+  })
 </script>
 
 <template>

@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],    //files to watch by tailwind index & all src folder vue, js, tx files
+  //files to watch by tailwind index & all src folder vue, js, tx files
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+
   theme: {                                                        //additional classes
     extend: {
       fontFamily: { sans: ['Poppins', 'sans-serif'] },

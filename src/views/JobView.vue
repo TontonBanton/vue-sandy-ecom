@@ -30,7 +30,6 @@ onMounted(async () => {
     jobData.isLoading = false;      // Stop loading in both success and error cases
   }
 });
-
 </script>
 
 <template>
@@ -62,7 +61,6 @@ onMounted(async () => {
             <h3 class="text-xl font-bold mb-6">Company Info</h3>
             <h2 class="text-2xl">{{ jobData.job.company.name }}</h2>
             <p class="my-2">{{ jobData.job.company.description }}</p>
-            <hr class="my-4" />
             <h3 class="text-xl">Contact Email:</h3>
             <p class="my-2 p-2 font-bold">{{ jobData.job.company.contactEmail}}</p>
             <h3 class="text-xl">Contact Phone:</h3>
@@ -78,5 +76,5 @@ onMounted(async () => {
     </div>
   </section>
 
-  <div v-else class="text-center text-gray-500 py-6"><ClipLoader :loading="true" color="#c2410c" /></div>
+  <div v-else class="loader"><ClipLoader :loading="true" color="#c2410c" /></div>
 </template>

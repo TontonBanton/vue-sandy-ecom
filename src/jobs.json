@@ -115,12 +115,12 @@
     {
       "type": "Full-Time",
       "title": "Problem Solutions",
-      "description": "Solving basic common sense",
+      "description": "Solving basic common sense problems",
       "salary": "Over $200K",
       "location": "Km. 8 Crossing Ulas, Davao City",
       "company": {
         "name": "Ton_IO",
-        "description": "Get things done trial",
+        "description": "Get things done no matter what",
         "contactEmail": "trial@email.com",
         "contactPhone": "555-555-5555"
       },

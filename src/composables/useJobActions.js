@@ -70,9 +70,5 @@ export function useJobActions() {
     }
   };
 
-  return {
-    addJob,
-    updateJob,
-    deleteJob
-  };
+  return { addJob, updateJob, deleteJob }
 }
