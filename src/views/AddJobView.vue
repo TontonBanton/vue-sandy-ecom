@@ -5,7 +5,6 @@
 
   const { form } = useJobForm();
   const { addJob } = useJobActions();
-
 </script>
 
 <template>

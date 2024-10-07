@@ -85,10 +85,9 @@
       }
     },
     {
-      "id": "845f",
       "type": "Full-Time",
       "title": "Solution Developer",
-      "description": "Trial of description",
+      "description": "Develop software for problemados",
       "salary": "$100K - $125K",
       "location": "Km. 8 Crossing Ulas, Davao City",
       "company": {
@@ -96,7 +95,8 @@
         "description": "Company description trial",
         "contactEmail": "trial@email.com",
         "contactPhone": "09098243699"
-      }
+      },
+      "id": "845f"
     },
     {
       "type": "Remote",
@@ -113,18 +113,18 @@
       "id": "22fb"
     },
     {
-      "type": "Full-Time",
-      "title": "Problem Solutions",
-      "description": "Solving basic common sense problems",
-      "salary": "Over $200K",
-      "location": "Km. 8 Crossing Ulas, Davao City",
+      "id": "9592",
+      "type": "",
+      "title": "",
+      "description": "",
+      "salary": "",
+      "location": "",
       "company": {
-        "name": "Ton_IO",
-        "description": "Get things done no matter what",
-        "contactEmail": "trial@email.com",
-        "contactPhone": "555-555-5555"
-      },
-      "id": "e16a"
+        "name": "",
+        "description": "",
+        "contactEmail": "",
+        "contactPhone": ""
+      }
     }
   ]
 }

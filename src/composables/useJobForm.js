@@ -11,8 +11,8 @@ export function useJobForm() {
       name: '',
       description: '',
       contactEmail: '',
-      contactPhone: ''
-    }
+      contactPhone: '',
+    },
   });
 
   const populateForm = (job) => {
@@ -27,5 +27,19 @@ export function useJobForm() {
     form.company.contactPhone = job.company.contactPhone;
   };
 
-  return { form, populateForm };
+  const createJobObject = () => ({
+    type: form.type,
+    title: form.title,
+    description: form.description,
+    salary: form.salary,
+    location: form.location,
+    company: {
+      name: form.company.name,
+      description: form.company.description,
+      contactEmail: form.company.contactEmail,
+      contactPhone: form.company.contactPhone,
+    },
+  });
+
+  return { form, populateForm, createJobObject };
 }

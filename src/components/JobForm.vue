@@ -15,7 +15,7 @@ const { jobTypes, salaryRanges } = useJobOptions();
 
 <template>
 <form @submit.prevent="submitAction(form)">
-  <h2 class="text-3xl text-center font-semibold mb-6">Add Job</h2>
+  <h2 class="text-3xl text-center font-semibold mb-6">{{ buttonLabel }}</h2>
     <select v-model="form.type" id="type" name="type" class="mb-4" required >
       <option v-for="option in jobTypes" :key="option.value" :value="option.value" :disabled="option.disabled">
         {{ option.text }}
