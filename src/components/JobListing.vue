@@ -21,7 +21,7 @@ const truncatedDescription = computed(()=> {
 </script>
 
 <template>
-  <div class="bg-gray-200 p-4 rounded-xl shadow-md relative">
+  <div class="bg-gray-200 p-4 rounded-xl shadow-md relative animate-entrance">
     <!-- Job Image -->
     <img :src="job.image" :alt="job.title" class="w-full h-48 object-cover rounded-md mb-4" />
     <div class="mb-6">
@@ -39,6 +39,27 @@ const truncatedDescription = computed(()=> {
       <div> ₱ {{ job.price }} </div>
       <RouterLink :to="'/jobs/' + job.id" class="btn w-[125px] text-sm">View Details</RouterLink>
     </div>
-
   </div>
 </template>
+
+<style scoped>
+@keyframes entrance {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px); /* Start from the left */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Move to the original position */
+  }
+}
+.animate-entrance {
+  animation: entrance 1s ease-out forwards;
+}
+@media (min-width: 768px) {
+  /* Apply the animation only on medium screens and larger */
+  .hidden.md\:block {
+    display: block;
+  }
+}
+</style>

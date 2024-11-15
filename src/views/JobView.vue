@@ -50,7 +50,7 @@ onMounted(async () => {
   <section v-if="!jobData.isLoading && !jobData.isNotFound" class="bg-gray-200">
     <!-- <div class="container m-auto py-10 px-6">
       <div class="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6"> -->
-    <div class="flex justify-center items-center">
+    <div class="flex justify-center items-center animate-entrance">
       <div class="grid grid-cols-1 md:grid-cols-100 w-[70%] gap-6">
         <main>
           <div class="bg-white p-6 rounded-lg shadow-md text-center md:text-left">
@@ -100,3 +100,25 @@ onMounted(async () => {
 
   <div v-else class="loader"><ClipLoader :loading="true" color="#c2410c" /></div>
 </template>
+
+<style scoped>
+@keyframes entrance {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px); /* Start from the left */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Move to the original position */
+  }
+}
+.animate-entrance {
+  animation: entrance 1s ease-out forwards;
+}
+@media (min-width: 768px) {
+  /* Apply the animation only on medium screens and larger */
+  .hidden.md\:block {
+    display: block;
+  }
+}
+</style>
