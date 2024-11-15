@@ -40,6 +40,11 @@ onMounted(async () => {
   }
 });
 
+// Handle the "Buy Now" button click
+const addToCart = () => {
+  alert('Added to cart');
+  router.push('/'); // Redirect to the home page
+};
 
 </script>
 
@@ -68,12 +73,15 @@ onMounted(async () => {
             <h3 class="text-orange-800 text-lg font-bold mb-2">Price</h3>
             <p class="mb-4">₱ {{ jobData.job.price}}</p>
           </div>
+
           <div class="bg-white p-6 rounded-lg shadow-md mt-6">
             <!-- <h3 class="text-xl font-bold mb-6">Manage Job</h3>
             <RouterLink :to="`/jobs/edit/${jobData.job.id}`" class="btn"> Edit Job </RouterLink> -->
+            <!-- <button @click="deleteJob(jobData.job.id)" class="btn">Buy Now</button> -->
             <h3 class="text-orange-800 text-lg font-bold">Add to your cart</h3>
-            <button @click="deleteJob(jobData.job.id)" class="btn">Buy Now</button>
+            <button @click="addToCart" class="btn">Buy Now</button>
           </div>
+
         </main>
 
         <!-- Sidebar -->
