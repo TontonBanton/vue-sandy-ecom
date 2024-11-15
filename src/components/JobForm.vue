@@ -15,7 +15,7 @@ const { jobTypes, salaryRanges } = useJobOptions();
 
 <template>
 <form @submit.prevent="submitAction(form)">
-  <h2 class="text-3xl text-center font-semibold mb-6">{{ buttonLabel }}</h2>
+  <!-- <h2 class="text-3xl text-center font-semibold mb-6">{{ buttonLabel }}</h2>
     <select v-model="form.type" id="type" name="type" class="mb-4" required >
       <option v-for="option in jobTypes" :key="option.value" :value="option.value" :disabled="option.disabled">
         {{ option.text }}
@@ -33,6 +33,21 @@ const { jobTypes, salaryRanges } = useJobOptions();
     <textarea v-model="form.company.description" id="company_description" name="company_description" rows="4" placeholder="Description" class="mb-4"></textarea>
     <input v-model="form.company.contactEmail" type="email" id="contact_email" name="contact_email" placeholder="E-mail Address" class="mb-4"/>
     <input v-model="form.company.contactPhone" type="tel" id="contact_phone" name="contact_phone" placeholder="Contact No." class="mb-4"/>
-    <button type="submit" class="btn">{{ buttonLabel }}</button>
+    <button type="submit" class="btn">{{ buttonLabel }}</button> -->
+
+
+    <label class="mb-0 bg-gray-200 p-2 block">Contact</label>
+    <input placeholder="Full Name" class="mb-1" required />
+    <input placeholder="Phone Number" class="mb-4" required />
+    <label class="mb-0 bg-gray-200 p-2 block">Adress</label>
+    <input placeholder="Region, Province, City, Barangay" class="mb-1" required />
+    <input placeholder="Postal Code" class="mb-1" required />
+    <input placeholder="Stree Name, Building, House No." class="mb-4" required />
+    <label class="mb-0 bg-gray-200 p-2 block">Settings</label>
+
+    <!-- <button type="submit" class="btn">{{ buttonLabel }}</button> -->
+
+
 </form>
+
 </template>

@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "title": "Hair Clips",
+    "company": "Tech Corp",
+    "location": "Set of random colors and designs",
+    "description": "Upgrade your look with trendy hair clips, crafted for comfort and style. Perfect for any occasion!",
+    "image": "/images/1.png",
+    "price": 15.99
+  },
+  {
+    "id": 2,
+    "title": "Hair Clips",
+    "company": "Server Solutions",
+    "location": "Set of random colors and designs",
+    "description": "Upgrade your look with trendy hair clips, crafted for comfort and style. Perfect for any occasion!",
+    "image": "/images/2.png",
+    "price": 18.99
+  },
+  {
+    "id": 3,
+    "title": "Hair Clips",
+    "company": "Innovative Designs",
+    "location": "Set of random colors and designs",
+    "description": "Upgrade your look with trendy hair clips, crafted for comfort and style. Perfect for any occasion!",
+    "image": "/images/3.png",
+    "price": 16.99
+  },
+  {
+    "id": 4,
+    "title": "Scrunchies",
+    "company": "Tech Corp",
+    "location": "Set of random colors and designs",
+    "description": "Add flair to your outfit with our high-quality scrunchies, combining fashion and function effortlessly.",
+    "image": "/images/4.png",
+    "price": 7.99
+  },
+  {
+    "id": 5,
+    "title": "Scrunchies",
+    "company": "Server Solutions",
+    "location": "Set of random colors and designs",
+    "description": "Add flair to your outfit with our high-quality scrunchies, combining fashion and function effortlessly.",
+    "image": "/images/5.png",
+    "price": 8.99
+  },
+  {
+    "id": 6,
+    "title": "Scrunchies",
+    "company": "Innovative Designs",
+    "location": "Set of random colors and designs",
+    "description": "Add flair to your outfit with our high-quality scrunchies, combining fashion and function effortlessly.",
+    "image": "/images/6.png",
+    "price": 9.99
+  },
+  {
+    "id": 7,
+    "title": "Headband",
+    "company": "Tech Corp",
+    "location": "Set of random colors and designs",
+    "description": "Discover elegant, versatile accessories designed to elevate your everyday style with ease and sophistication.",
+    "image": "/images/7.png",
+    "price": 15.99
+  },
+  {
+    "id": 8,
+    "title": "Headband",
+    "company": "Server Solutions",
+    "location": "Set of random colors and designs",
+    "description": "Discover elegant, versatile accessories designed to elevate your everyday style with ease and sophistication.",
+    "image": "/images/8.png",
+    "price": 18.99
+  },
+  {
+    "id": 9,
+    "title": "Headband",
+    "company": "Innovative Designs",
+    "location": "Set of random colors and designs",
+    "description": "Discover elegant, versatile accessories designed to elevate your everyday style with ease and sophistication.",
+    "image": "/images/9.png",
+    "price": 16.99
+  }
+]
+

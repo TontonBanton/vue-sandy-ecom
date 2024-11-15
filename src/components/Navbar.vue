@@ -11,12 +11,12 @@ const isActiveLink = (routerLinkPath) => {
 </script>
 
 <template>
-  <nav class="bg-gray-600">
+  <nav class="bg-gray-400">
     <div class="mx-auto w-full px-2 sm:px-6 lg:px-8 flex h-20 items-center justify-between">
       <!-- Logo -->
       <RouterLink class="flex flex-shrink-0 items-center mr-4" to="/">
-        <img class="h-10 w-auto" :src="logo" alt="Vue Jobs" />
-        <span class="hidden md:block text-white text-2xl font-bold ml-2">Jobs Listing</span>
+        <!-- <img class="h-10 w-auto" :src="logo" alt="Vue Jobs" /> -->
+        <span class="hidden md:block text-white text-2xl font-bold ml-2">J&S Shop</span>
       </RouterLink>
 
       <div class="md:ml-auto">
@@ -27,11 +27,11 @@ const isActiveLink = (routerLinkPath) => {
           </RouterLink>
           <RouterLink to="/jobs"
             :class="[ isActiveLink('/jobs') ? 'bg-orange-700' : 'hover:bg-gray-500', 'navbtn']">
-            Jobs
+            Products
           </RouterLink>
           <RouterLink to="/jobs/add"
             :class="[ isActiveLink('/jobs/add') ? 'bg-orange-700' : 'hover:bg-gray-500', 'navbtn']">
-            Add Job
+            Me
           </RouterLink>
         </div>
       </div>

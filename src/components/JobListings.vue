@@ -23,23 +23,34 @@ const showAllJobs = (event) => {
   jobLimit.value = jobData.jobs.length;               //Change the value of limit to jobs.length
 }
 
-onMounted( async ()=> {
+// onMounted( async ()=> {
+//   try {
+//     const response = await axios.get('/api/jobs')     //vite proxy for '/api'
+//     jobData.jobs = response.data
+//   } catch (error) {
+//     console.error('Error fetching data', error)
+//   } finally {
+//     jobData.isLoading = false
+//   }
+// })
+
+onMounted(async () => {
   try {
-    const response = await axios.get('/api/jobs')     //vite proxy for '/api'
-    jobData.jobs = response.data
+    const response = await fetch('/products.json'); // Load jobs.json from the public folder
+    jobData.jobs = await response.json();
   } catch (error) {
-    console.error('Error fetching data', error)
+    console.error('Error loading data from JSON file:', error);
   } finally {
-    jobData.isLoading = false
+    jobData.isLoading = false;
   }
-})
+});
 </script>
 
 <template>
-  <section class="bg-gray-400 px-4 py-10">
+  <section class="bg-gray-200 px-4 py-10">
 
     <div class="container-xl lg:container m-auto">
-      <h2 class="text-3xl font-bold mb-6 text-center">Browse Jobs</h2>
+      <h2 class="text-3xl font-bold mb-6 text-center">Browse Products</h2>
       <div v-if="jobData.isLoading" class="loader"><ClipLoader :loading="true" color="#c2410c" /></div>
       <!--Show Jobs isLoading is false-->
       <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -48,7 +59,7 @@ onMounted( async ()=> {
     </div>
 
     <div v-if="showButton" class="m-auto max-w-lg my-10 px-6">
-      <RouterLink to="/jobs" @click="showAllJobs" class="btn"> View All Jobs</RouterLink>
+      <RouterLink to="/jobs" @click="showAllJobs" class="btn"> View All Products</RouterLink>
     </div>
 
   </section>

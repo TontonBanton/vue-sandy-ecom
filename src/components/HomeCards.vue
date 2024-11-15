@@ -4,19 +4,19 @@
 </script>
 
 <template>
-  <section class="bg-gray-400 py-4">
+  <section class="bg-gray-200 py-4">
     <div class="container-xl lg:container m-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg ">
 
       <Card>
-        <h2 class="text-2xl font-bold">For Developers</h2>
-        <p class="mt-2 mb-4"> Browse our Vue jobs and start your career today </p>
-        <RouterLink to="/jobs" class="btn">Browse Jobs</RouterLink>
+        <h2 class="text-2xl font-bold">For Shoppers</h2>
+        <p class="mt-2 mb-4"> Browse for your favorite products today </p>
+        <RouterLink to="/jobs" class="btn">Browse Products</RouterLink>
       </Card>
       <Card>
-        <h2 class="text-2xl font-bold">For Employers</h2>
-        <p class="mt-2 mb-4">List your job to find the perfect developer for the role</p>
-        <RouterLink to="/jobs/add" class="btn">Add Job</RouterLink>
+        <h2 class="text-2xl font-bold">For Members</h2>
+        <p class="mt-2 mb-4">View your profile and see what is the latest</p>
+        <RouterLink to="/jobs/add" class="btn">Go to profile</RouterLink>
       </Card>
 
       </div>
