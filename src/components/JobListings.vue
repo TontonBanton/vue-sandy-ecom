@@ -47,9 +47,9 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section class="bg-gray-200 px-4 py-10">
+  <section class="bg-gray-200 px-4 py-5">
     <div class="container-xl lg:container m-auto">
-      <h2 class="text-3xl font-bold mb-6 text-center">Browse Products</h2>
+      <h2 class="text-3xl mb-6 text-center">Browse Products</h2>
       <div v-if="jobData.isLoading" class="loader"><ClipLoader :loading="true" color="#c2410c" /></div>
 
       <!--Show Jobs isLoading is false-->

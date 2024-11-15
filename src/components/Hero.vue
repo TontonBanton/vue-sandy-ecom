@@ -7,10 +7,10 @@ const props = defineProps({
 </script>
 
 <template>
-  <section class="bg-gray-200 py-10">
+  <section class="bg-gray-200 py-5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
       <div class="text-center">
-        <h1 class="text-4xl font-bold sm:text-4xl md:text-5xl">{{ title }}</h1>
+        <h1 class="text-4xl sm:text-4xl md:text-5xl">{{ title }}</h1>
         <p class="my-4 text-xl"> {{subtitle}} </p>
       </div>
     </div>

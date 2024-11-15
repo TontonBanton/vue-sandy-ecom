@@ -26,7 +26,7 @@ const truncatedDescription = computed(()=> {
     <img :src="job.image" :alt="job.title" class="w-full h-48 object-cover rounded-md mb-4" />
     <div class="mb-6">
       <div class="text-gray-600 my-2">{{ job.type }}</div>
-      <h3 class="text-xl font-bold">{{ job.title }}</h3>
+      <h3 class="text-xl">{{ job.title }}</h3>
     </div>
     <div class="mb-5">
       <div>{{ truncatedDescription }}</div>
