@@ -6,7 +6,7 @@
     "location": "Set of random colors and designs",
     "description": "Upgrade your look with trendy hair clips, crafted for comfort and style. Perfect for any occasion!",
     "image": "/images/1.png",
-    "price": 15.99
+    "price": 109
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "location": "Set of random colors and designs",
     "description": "Upgrade your look with trendy hair clips, crafted for comfort and style. Perfect for any occasion!",
     "image": "/images/2.png",
-    "price": 18.99
+    "price": 109
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "location": "Set of random colors and designs",
     "description": "Upgrade your look with trendy hair clips, crafted for comfort and style. Perfect for any occasion!",
     "image": "/images/3.png",
-    "price": 16.99
+    "price": 109
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "location": "Set of random colors and designs",
     "description": "Add flair to your outfit with our high-quality scrunchies, combining fashion and function effortlessly.",
     "image": "/images/4.png",
-    "price": 7.99
+    "price": 119
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "location": "Set of random colors and designs",
     "description": "Add flair to your outfit with our high-quality scrunchies, combining fashion and function effortlessly.",
     "image": "/images/5.png",
-    "price": 8.99
+    "price": 119
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "location": "Set of random colors and designs",
     "description": "Add flair to your outfit with our high-quality scrunchies, combining fashion and function effortlessly.",
     "image": "/images/6.png",
-    "price": 9.99
+    "price": 119
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "location": "Set of random colors and designs",
     "description": "Discover elegant, versatile accessories designed to elevate your everyday style with ease and sophistication.",
     "image": "/images/7.png",
-    "price": 15.99
+    "price": 129
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "location": "Set of random colors and designs",
     "description": "Discover elegant, versatile accessories designed to elevate your everyday style with ease and sophistication.",
     "image": "/images/8.png",
-    "price": 18.99
+    "price": 129
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "location": "Set of random colors and designs",
     "description": "Discover elegant, versatile accessories designed to elevate your everyday style with ease and sophistication.",
     "image": "/images/9.png",
-    "price": 16.99
+    "price": 129
   }
 ]
 

@@ -36,7 +36,7 @@ const truncatedDescription = computed(()=> {
     </div>
     <h3 class="mb-2">{{ job.salary }}</h3>
     <div class="flex flex-col lg:flex-row justify-between mb-4">
-      <div> <i class="pi pi-dollar text-orange-500"></i>  {{ job.price }} </div>
+      <div> ₱ {{ job.price }} </div>
       <RouterLink :to="'/jobs/' + job.id" class="btn w-[125px] text-sm">View Details</RouterLink>
     </div>
 

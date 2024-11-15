@@ -66,7 +66,7 @@ onMounted(async () => {
             <h3 class="text-orange-800 text-lg font-bold mb-6">Product Description</h3>
             <p class="mb-4">{{ jobData.job.description }}</p>
             <h3 class="text-orange-800 text-lg font-bold mb-2">Price</h3>
-            <p class="mb-4">{{ jobData.job.price}}</p>
+            <p class="mb-4">₱ {{ jobData.job.price}}</p>
           </div>
           <div class="bg-white p-6 rounded-lg shadow-md mt-6">
             <!-- <h3 class="text-xl font-bold mb-6">Manage Job</h3>
