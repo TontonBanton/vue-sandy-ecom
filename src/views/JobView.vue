@@ -59,13 +59,14 @@ const addToCart = () => {
       <div class="grid grid-cols-1 md:grid-cols-100 w-[70%] gap-6">
         <main>
           <div class="bg-white p-6 rounded-lg shadow-md text-center md:text-left">
-            <img :src="jobData.job.image" alt="Job Image" class="w-full h-auto rounded-lg mb-4" />
+            <img :src="jobData.job.image" alt="Job Image" class="w-full h-auto rounded-lg" />
             <div class="text-gray-500 mb-4">{{ jobData.job.type }}</div>
             <h1 class="text-3xl font-bold mb-4">{{ jobData.job.title }}</h1>
             <div class="text-gray-500 mb-4 flex align-middle justify-center md:justify-start">
               <i class="pi pi-map-marker text-xl text-orange-700 mr-2"></i>
               <p class="text-orange-700">{{ jobData.job.location }}</p>
             </div>
+            <img :src="jobData.job.image2" alt="Job Image" class="w-full rounded-lg mb-4" />
           </div>
           <div class="bg-white p-6 rounded-lg shadow-md mt-3">
             <h3 class="text-orange-800 text-lg font-bold mb-6">Product Description</h3>
