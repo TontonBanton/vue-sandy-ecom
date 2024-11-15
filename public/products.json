@@ -1,37 +1,37 @@
 [
   {
     "id": 1,
-    "title": "Hair Clips",
+    "title": "Claw Hair Clips",
     "company": "Tech Corp",
     "location": "Set of random colors and designs",
-    "description": "Upgrade your look with trendy hair clips, crafted for comfort and style. Perfect for any occasion!",
+    "description": "Upgrade your look with trendy stylish hair clips, crafted for comfort and style. Perfect for any occasion!",
     "image": "/images/1.png",
     "image2": "/images/1set.png",
     "price": 109
   },
   {
     "id": 2,
-    "title": "Hair Clips",
+    "title": "Shell Hair Clips",
     "company": "Server Solutions",
     "location": "Set of random colors and designs",
-    "description": "Upgrade your look with trendy hair clips, crafted for comfort and style. Perfect for any occasion!",
+    "description": "Elevate your style with sea shell design hair clips, crafted for both comfort and elegance. Perfect for any occasion!",
     "image": "/images/2.png",
     "image2": "/images/1set.png",
     "price": 109
   },
   {
     "id": 3,
-    "title": "Hair Clips",
+    "title": "Ribbon Hair Clips",
     "company": "Innovative Designs",
     "location": "Set of random colors and designs",
-    "description": "Upgrade your look with trendy hair clips, crafted for comfort and style. Perfect for any occasion!",
+    "description": "Enhance your look with stylish ribbon design hair clips, designed for both comfort and elegance. Perfect for any event!",
     "image": "/images/3.png",
     "image2": "/images/1set.png",
     "price": 109
   },
   {
     "id": 4,
-    "title": "Scrunchies",
+    "title": "Satin Scrunchies",
     "company": "Tech Corp",
     "location": "Set of random colors and designs",
     "description": "Add flair to your outfit with our high-quality scrunchies, combining fashion and function effortlessly.",
@@ -41,17 +41,17 @@
   },
   {
     "id": 5,
-    "title": "Scrunchies",
+    "title": "Lace Scrunchies",
     "company": "Server Solutions",
     "location": "Set of random colors and designs",
-    "description": "Add flair to your outfit with our high-quality scrunchies, combining fashion and function effortlessly.",
+    "description": "Incorporate a touch of charm into your style with our floral scrunchies, effortlessly combining beauty and comfort.",
     "image": "/images/5.png",
     "image2": "/images/2set.png",
     "price": 119
   },
   {
     "id": 6,
-    "title": "Scrunchies",
+    "title": "Floral Scrunchies",
     "company": "Innovative Designs",
     "location": "Set of random colors and designs",
     "description": "Add flair to your outfit with our high-quality scrunchies, combining fashion and function effortlessly.",
@@ -61,7 +61,7 @@
   },
   {
     "id": 7,
-    "title": "Headband",
+    "title": "Aesthetic Headband",
     "company": "Tech Corp",
     "location": "Set of random colors and designs",
     "description": "Discover elegant, versatile accessories designed to elevate your everyday style with ease and sophistication.",
@@ -71,20 +71,20 @@
   },
   {
     "id": 8,
-    "title": "Headband",
+    "title": "Bluish Theme Headband",
     "company": "Server Solutions",
     "location": "Set of random colors and designs",
-    "description": "Discover elegant, versatile accessories designed to elevate your everyday style with ease and sophistication.",
+    "description": "Explore chic, adaptable accessories crafted to enhance your daily look with a touch of blue elegance and refinement.",
     "image": "/images/8.png",
     "image2": "/images/3set.png",
     "price": 129
   },
   {
     "id": 9,
-    "title": "Headband",
+    "title": "Floral Pink Headband",
     "company": "Innovative Designs",
     "location": "Set of random colors and designs",
-    "description": "Discover elegant, versatile accessories designed to elevate your everyday style with ease and sophistication.",
+    "description": "Embrace effortless style with our pink floral headbands, designed to add a burst of charm and grace to your look.",
     "image": "/images/9.png",
     "image2": "/images/3set.png",
     "price": 129

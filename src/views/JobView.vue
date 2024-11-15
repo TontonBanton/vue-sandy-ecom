@@ -43,9 +43,10 @@ onMounted(async () => {
 // Handle the "Buy Now" button click
 const addToCart = () => {
   alert('Added to cart');
-  router.push('/'); // Redirect to the home page
+  router.push('/').then(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  });
 };
-
 </script>
 
 <template>
@@ -56,30 +57,23 @@ const addToCart = () => {
     <!-- <div class="container m-auto py-10 px-6">
       <div class="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6"> -->
     <div class="flex justify-center items-center animate-entrance">
-      <div class="grid grid-cols-1 md:grid-cols-100 w-[70%] gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-100 w-95% md:w-[70%] gap-6">
         <main>
           <div class="bg-white p-6 rounded-lg shadow-md text-center md:text-left">
-            <img :src="jobData.job.image" alt="Job Image" class="w-full h-auto rounded-lg" />
-            <div class="text-gray-500 mb-4">{{ jobData.job.type }}</div>
-            <h1 class="text-3xl font-bold mb-4">{{ jobData.job.title }}</h1>
-            <div class="text-gray-500 mb-4 flex align-middle justify-center md:justify-start">
-              <i class="pi pi-map-marker text-xl text-orange-700 mr-2"></i>
-              <p class="text-orange-700">{{ jobData.job.location }}</p>
-            </div>
-            <img :src="jobData.job.image2" alt="Job Image" class="w-full rounded-lg mb-4" />
+            <img :src="jobData.job.image" alt="Job Image" class="w-full h-auto rounded-lg mb-3" />
+            <h1 class="text-3xl mb-4 text-left">{{ jobData.job.title }}</h1>
+            <p class="text-orange-700 text-left">{{ jobData.job.location }}</p>
+            <img :src="jobData.job.image2" alt="Job Image" class="w-full rounded-lg mb-2" />
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-md mt-3">
-            <h3 class="text-orange-800 text-lg font-bold mb-6">Product Description</h3>
-            <p class="mb-4">{{ jobData.job.description }}</p>
-            <h3 class="text-orange-800 text-lg font-bold mb-2">Price</h3>
-            <p class="mb-4">₱ {{ jobData.job.price}}</p>
+          <div class="bg-white p-6 rounded-lg shadow-md mt-1">
+            <h3 class="text-orange-800 text-lg mb-2">Product Description</h3>
+            <p class="mb-2">{{ jobData.job.description }}</p>
+            <h3 class="text-orange-800 text-lg mb-2">Price</h3>
+            <p class="mb-2">₱ {{ jobData.job.price}}</p>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-md mt-6">
-            <!-- <h3 class="text-xl font-bold mb-6">Manage Job</h3>
-            <RouterLink :to="`/jobs/edit/${jobData.job.id}`" class="btn"> Edit Job </RouterLink> -->
-            <!-- <button @click="deleteJob(jobData.job.id)" class="btn">Buy Now</button> -->
-            <h3 class="text-orange-800 text-lg font-bold">Add to your cart</h3>
+          <div class="bg-white p-6 rounded-lg shadow-md mt-1">
+            <h3 class="text-orange-800 text-lg">Add to your cart</h3>
             <button @click="addToCart" class="btn">Buy Now</button>
           </div>
 
